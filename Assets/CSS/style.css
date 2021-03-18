@@ -119,8 +119,8 @@ header {
     color: var(--light);
 }
 
-/* Container for movie content */
-.container.movie {
+/* Containers for movie content and drink content*/
+.container.movie, .container.drink {
     display: flex;
     flex-flow: column;
     width: 45%;
@@ -133,30 +133,30 @@ header {
     text-align: center;
 }
 
-#movie-title {
+.container h4 {
     font-size: 130%;
 }
 
-#movie-plot {
+.container p {
     width: 85%;
 }
 
-/* Image container for movie poster */
+/* Image containers for movie poster and drink image */
 #poster-container {
     height: 70%;
     display: flex;
     justify-content: center;
 }
 
-#poster-container image {
-    border-radius: 5%;
+#drink-image {
+    height: 70%;
+    display: flex;
+    justify-content: center;
 }
 
-/* Container for drink content */
-.container.drink {
-    display: flex;
-    flex-flow: column;
-    width: 45%;
-    border: dotted var(--titleGreen);
+.container img {
+    max-width: 100%;
+    max-height: 100%;
 }
+
 
