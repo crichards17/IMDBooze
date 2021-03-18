@@ -1,0 +1,73 @@
+:root {
+    --info: #5bc0de;
+    --light: #f7f7f7;
+    --dark: #8a8888;
+}
+
+header {
+    padding: 5px;
+    display: flex;
+    background-color: var(--info);
+}
+
+#main {
+    display: flex;
+    min-height: 100%;
+}
+
+#sidebar {
+    width : 30%;
+    padding-bottom: 5px;
+    background-color: var(--dark);
+    min-height: 100%;
+}
+
+.search-box {
+    width: 65%;
+}
+
+#search-button {
+    width: 30%;
+}
+
+#search-container {
+    display: flex;
+    justify-content:space-between;
+}
+
+#search-history {
+    padding: 0;
+}
+
+.history {
+    margin: 5px 0;
+    padding: 2px 5px;
+}
+
+.history:hover {
+    cursor:pointer;
+}
+
+#clear-search {
+    width: 100%;
+}
+
+h4 {
+    font-size: 135%;
+}
+
+button {
+    background-color: var(--info);
+    color: white;
+    font-size: 110%;
+    font-weight:500;
+}
+
+#forecast-container {
+    padding: 10px 0;
+    background-color: var(--light);
+}
+
+.forecast-card h4 {
+    margin-top: 5px;
+}
