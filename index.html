@@ -13,18 +13,27 @@
             Bev-Films
         </h1>
     </header>
-    <div id="main">
-        <div id="sidebar">
-            <h2>Step 1: Search for a movie or show </h2>
+    <div class="container main">
+        <div class="sidebar">
+            <h3>Step 1: Search for a movie or show </h3>
             <div id="search-container">
                 <input type="text" class="search-box" id="search-box" placeholder="Title"></input>
                 <button id="search-button">Search</button>
             </div>
+            <h3 class="hidden" id="step-2">Step 2: Select a search result</h3>
             <div id="search-results"></div>
         </div>
-        <div class="main-window">
-            <div class="card col-12" id="content-container">
-            
+        <div class="container content">
+            <div class="container movie">
+                <h4 id="movie-title"></h4>
+                <div id="poster-container"></div>
+                <p id="movie-plot"></p>
+                <p id="imdb-rating"></p>
+            </div>
+            <div class="container drink">
+                <h4 id="drink-name"></h4>
+                <div id="drink-image"></div>
+                <p id="ingredients"></p>
             </div>
         </div>
     </div>

@@ -1,73 +1,119 @@
+/* Quick margin and padding reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* "info" and "light" are just copied from Bootstrap's color pallette. Dark was for troubleshooting. */
 :root {
     --info: #5bc0de;
     --light: #f7f7f7;
     --dark: #8a8888;
 }
 
+/* Make body full-height and flex-display header and content */
+body {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+/* Header  */
 header {
     padding: 5px;
     display: flex;
     background-color: var(--info);
+    height: 50px;
 }
 
-#main {
+/* Container for all content under the header */
+.container.main {
     display: flex;
-    min-height: 100%;
+    flex: 1;
 }
 
-#sidebar {
-    width : 30%;
-    padding-bottom: 5px;
-    background-color: var(--dark);
-    min-height: 100%;
+/* Sidebar container */
+.sidebar {
+    width: 200px;
+    background-color: var(--light);
+    padding: 5px;
 }
 
-.search-box {
-    width: 65%;
-}
-
-#search-button {
-    width: 30%;
-}
-
+/* Holds search bar and search button */
 #search-container {
     display: flex;
     justify-content:space-between;
 }
 
-#search-history {
-    padding: 0;
+/* Search box and search button*/
+.search-box {
+    width: 65%;
+    padding: 1px;
 }
 
-.history {
-    margin: 5px 0;
-    padding: 2px 5px;
-}
-
-.history:hover {
-    cursor:pointer;
-}
-
-#clear-search {
-    width: 100%;
-}
-
-h4 {
-    font-size: 135%;
-}
-
-button {
+#search-button {
+    width: 30%;
     background-color: var(--info);
     color: white;
     font-size: 110%;
     font-weight:500;
 }
 
-#forecast-container {
-    padding: 10px 0;
-    background-color: var(--light);
+/* "Step 1" and "Step 2" text */
+.sidebar h3 {
+    margin: 5px 0;
 }
 
-.forecast-card h4 {
-    margin-top: 5px;
+/* For dynamic element hiding (ex: "Step 2" text) */
+.hidden {
+    display: none;
+}
+
+/* Cards for displaying search results */
+.result-card {
+    margin: 2px 1px;
+    background-color: white;
+    padding: 2px 5px;
+    border-style:solid;
+}
+
+.result-card:hover {
+    cursor: pointer;
+}
+
+/* Container for movie and drink content */
+/* NOTE: All container borders are for visualization and troubleshooting, should be updated/removed. */
+.container.content {
+    display: flex;
+    justify-content: space-around;
+    border: solid red;
+    height: 500px;
+    flex: 1;
+    padding: 5px;
+}
+
+/* Container for movie content */
+.container.movie {
+    display: flex;
+    flex-flow: column;
+    width: 45%;
+    border: dotted blue;
+    justify-content: space-around;
+    align-items:stretch;
+    text-align: center;
+}
+
+/* Container for drink content */
+.container.drink {
+    display: flex;
+    flex-flow: column;
+    width: 45%;
+    border: dotted blue;
+}
+
+/* Image container for movie poster */
+#poster-container {
+    height: 70%;
+    display: flex;
+    justify-content: center;
 }

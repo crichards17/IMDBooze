@@ -1,101 +1,101 @@
 class Movie {
 	constructor(title){
-		this.title = title;
+		this._title = title;
 	}
+
 	get title(){
-		return this.title;
+		return this._title;
 	}
 	set year(y){
-		this.year = y;
+		this._year = y;
 	}
 
 	get year() {
-		return this.year;
+		return this._year;
 	}
 
 	set genre(g){
-		this.genre = g;
+		this._genre = g;
 	}
 
 	get genre() {
-		return this.genre;
+		return this._genre;
 	}
 
 	set director(d){
-		this.director = d;
+		this._director = d;
 	}
 
 	get director() {
-		return this.director;
+		return this._director;
 	}
 
 	set writer(w){
-		this.writer = w;
+		this._writer = w;
 	}
 
 	get writer() {
-		return this.writer;
+		return this._writer;
 	}
 
 	set plot(p){
-		this.plot = p;
+		this._plot = p;
 	}
 
 	get plot() {
-		return this.plot;
+		return this._plot;
 	}
 
 	set country(c){
-		this.country = c;
+		this._country = c;
 	}
 
 	get country() {
-		return this.country;
+		return this._country;
 	}
 
 	set poster(p){
-		this.poster = p;
+		this._poster = p;
 	}
 
 	get poster() {
-		return this.poster;
+		return this._poster;
 	}
 
 	set metascore(m){
-		this.metascore = m;
+		this._metascore = m;
 	}
 
 	get metascore() {
-		return this.metascore;
+		return this._metascore;
 	}
 
 	set imdbid(i){
-		this.imdbid = i;
+		this._imdbid = i;
 	}
 
 	get imdbid() {
-		return this.imdbid;
+		return this._imdbid;
 	}
 
 	// Note: 'movie', 'series'
 	set type(t){
-		this.type = t;
+		this._type = t;
 	}
 
 	get type() {
-		return this.type;
+		return this._type;
 	}
 
 	set website(w){
-		this.website = w;
+		this._website = w;
 	}
 
 	get website() {
-		return this.website;
+		return this._website;
 	}
 
-	// TODO: add method to return text blob that spits out toString();
 	toString() {
-		return this.title + this.year + this.genre + this.director + this.writer + this.plot + this.country + this.type;
+		return this._title + this._year + this._genre + this._director + this._writer + this._plot + this._country + this._type;
 	}
 }
