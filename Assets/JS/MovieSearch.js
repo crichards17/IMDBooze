@@ -1,11 +1,12 @@
 const searchButtonEl = $('#search-button');
 const searchBoxEl = $('#search-box');
 const resultsListEl = $('#search-results');
-const step2El = $('#step-2');
+const step2El = $('#step-2-block');
 const movieTitleEl = $('#movie-title');
 const posterEl = $('#poster-container');
 const moviePlotEl = $('#movie-plot');
 const movieRatingEl = $('#imdb-rating');
+const movieContainerEl = $('.container.movie');
 
 const apiURL = 'https://www.omdbapi.com/?apikey=c8c161fc';
 
@@ -21,8 +22,8 @@ function printResults(data) {
     step2El.removeClass('hidden');
     let results = data.Search;
     for (let i = 0; i < results.length; i++) {
-        let newLi = $(`<div class="result-card">${results[i].Title}</div>`);
-        resultsListEl.append(newLi);
+        let newResult = $(`<div class="result-card">${results[i].Title}</div>`);
+        resultsListEl.append(newResult);
     }
 }
 
@@ -52,9 +53,14 @@ function passMovie(data) {
 
 function printMovie(data) {
     movieTitleEl.text(data.Title);
-    posterEl.html(`<img src=${data.Poster} style="height:100%"></img>`);
+    if (data.Poster !== 'N/A') {
+        posterEl.html(`<img src=${data.Poster} style="height:100%"></img>`);
+    } else {
+        posterEl.html('Poster Unavailable');
+    }
     moviePlotEl.text(`Plot: ${data.Plot}`);
     movieRatingEl.text(`IMDB Rating: ${data.Ratings[0].Value}`);
+    movieContainerEl.removeClass('hidden');
 }
 
 searchButtonEl.on('click',searchMedia);
@@ -66,5 +72,4 @@ searchBoxEl.on('keyup', function(event) {
 $(document).on('click', '.result-card', function(event) {
     let title = $(event.target).text();
     getDetails(title);
-    // passDetails(title);
 });
