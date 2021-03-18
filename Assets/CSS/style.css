@@ -8,7 +8,10 @@
 :root {
     --info: #5bc0de;
     --light: #f7f7f7;
-    --dark: #8a8888;
+    --titleGreen: rgb(43, 175, 120);
+    --sidebar: rgb(23, 23, 56);
+    --dark: rgb(29, 29, 29);
+    
 }
 
 /* Make body full-height and flex-display header and content */
@@ -16,13 +19,14 @@ body {
     display: flex;
     flex-flow: column;
     height: 100vh;
+    background-color: var(--dark);
 }
 
 /* Header  */
 header {
     padding: 5px;
     display: flex;
-    background-color: var(--info);
+    background-color: var(--titleGreen);
     height: 50px;
 }
 
@@ -34,9 +38,19 @@ header {
 
 /* Sidebar container */
 .sidebar {
-    width: 200px;
-    background-color: var(--light);
-    padding: 5px;
+    width: 220px;
+    background-color: var(--sidebar);
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#step-1-block, #step-2-block {
+    margin: 10px 0;
+    padding: 10px;
+    border: dashed var(--titleGreen);
+    border-radius: 5px;
 }
 
 /* Holds search bar and search button */
@@ -62,11 +76,19 @@ header {
 /* "Step 1" and "Step 2" text */
 .sidebar h3 {
     margin: 5px 0;
+    color: var(--light);
+    text-align: center;
 }
 
 /* For dynamic element hiding (ex: "Step 2" text) */
 .hidden {
-    display: none;
+    visibility: hidden;
+}
+
+#search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Cards for displaying search results */
@@ -75,21 +97,26 @@ header {
     background-color: white;
     padding: 2px 5px;
     border-style:solid;
+    width: 85%;
+    transition: all 0.5s ease-in-out;
 }
 
 .result-card:hover {
     cursor: pointer;
+    width: 95%;
+    border-color: var(--titleGreen);
 }
 
 /* Container for movie and drink content */
-/* NOTE: All container borders are for visualization and troubleshooting, should be updated/removed. */
 .container.content {
     display: flex;
     justify-content: space-around;
-    border: solid red;
+
     height: 500px;
     flex: 1;
-    padding: 5px;
+    padding: 15px 5px;
+    
+    color: var(--light);
 }
 
 /* Container for movie content */
@@ -97,18 +124,21 @@ header {
     display: flex;
     flex-flow: column;
     width: 45%;
-    border: dotted blue;
+
+    border: dashed var(--titleGreen);
+    border-radius: 5%;
+
     justify-content: space-around;
-    align-items:stretch;
+    align-items: center;
     text-align: center;
 }
 
-/* Container for drink content */
-.container.drink {
-    display: flex;
-    flex-flow: column;
-    width: 45%;
-    border: dotted blue;
+#movie-title {
+    font-size: 130%;
+}
+
+#movie-plot {
+    width: 85%;
 }
 
 /* Image container for movie poster */
@@ -117,3 +147,16 @@ header {
     display: flex;
     justify-content: center;
 }
+
+#poster-container image {
+    border-radius: 5%;
+}
+
+/* Container for drink content */
+.container.drink {
+    display: flex;
+    flex-flow: column;
+    width: 45%;
+    border: dotted var(--titleGreen);
+}
+
