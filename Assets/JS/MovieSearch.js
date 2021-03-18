@@ -7,7 +7,7 @@ const posterEl = $('#poster-container');
 const moviePlotEl = $('#movie-plot');
 const movieRatingEl = $('#imdb-rating');
 
-const apiURL = 'https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=c8c161fc';
+const apiURL = 'https://www.omdbapi.com/?apikey=c8c161fc';
 
 function searchMedia() {
     let searchURL = apiURL + `&s=${searchBoxEl.val()}`;
