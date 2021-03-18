@@ -61,6 +61,18 @@ function printMovie(data) {
     moviePlotEl.text(`Plot: ${data.Plot}`);
     movieRatingEl.text(`IMDB Rating: ${data.Ratings[0].Value}`);
     movieContainerEl.removeClass('hidden');
+
+    // Dev. Remove for Prod.
+    printDrink();
+    // 
+}
+
+// DEV only. Remove for Prod.
+function printDrink () {
+    $('#drink-name').text('Whiskey Sour');
+    $('#drink-image').html('<img src="https://www.willcookforsmiles.com/wp-content/uploads/2020/02/Whiskey-Sour-9.jpg"></img>');
+    $('#ingredients').text("Ingredients: whiskey, sour, ice");
+    $('.container.drink').removeClass('hidden');
 }
 
 searchButtonEl.on('click',searchMedia);
